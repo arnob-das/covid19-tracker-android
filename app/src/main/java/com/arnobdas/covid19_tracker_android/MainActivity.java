@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
-
+            mywebview.loadUrl("file:///android_assets/index.html");
         }
 
         @Override
