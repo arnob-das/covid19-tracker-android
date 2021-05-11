@@ -18,8 +18,13 @@ public class MainActivity extends AppCompatActivity {
 
         mywebview = (WebView) findViewById(R.id.WebViewId);
         mywebview.loadUrl("https://www.google.com/");
-
         mywebview.setWebViewClient(new WebViewClient());
+
+        WebSettings x =mywebview.getSettings();
+        x.setJavaScriptEnabled(true);
+        x.setBuiltInZoomControls(false);
+        x.setCacheMode(WebSettings.LOAD_NO_CACHE);
+        x.setDomStorageEnabled(true);
 
     }
 
