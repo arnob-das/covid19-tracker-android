@@ -1,6 +1,7 @@
 package com.arnobdas.covid19_tracker_android;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.os.Bundle;
 import android.webkit.WebSettings;
@@ -10,11 +11,22 @@ import android.webkit.WebViewClient;
 public class MainActivity extends AppCompatActivity {
 
     WebView mywebview;
+    SwipeRefreshLayout swip;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        swip = (SwipeRefreshLayout)findViewById(R.id.swip);
+        swip.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                load();
+            }
+        });
+
+        load();
 
     }
 
@@ -28,7 +40,20 @@ public class MainActivity extends AppCompatActivity {
         myWebviewSettings.setCacheMode(WebSettings.LOAD_NO_CACHE);
         myWebviewSettings.setDomStorageEnabled(true);
 
-        mywebview.setWebViewClient(new WebViewClient());
+        mywebview.setWebViewClient(new WebViewClient(){
+
+
+        @Override
+        public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
+
+        }
+
+        @Override
+        public void onPageFinished(WebView view, String url) {
+            swip.setRefreshing(false);
+        }
+        }
+        );
     }
 
     @Override

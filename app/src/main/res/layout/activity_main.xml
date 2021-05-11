@@ -6,11 +6,26 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <WebView
-        android:id="@+id/WebViewId"
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swip"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    </WebView>
+        <WebView
+            android:id="@+id/WebViewId"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </WebView>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+<!--    <WebView-->
+<!--        android:id="@+id/WebViewId"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent">-->
+
+<!--    </WebView>-->
 
 </RelativeLayout>
