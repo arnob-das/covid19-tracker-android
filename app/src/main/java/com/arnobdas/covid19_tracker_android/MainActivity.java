@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mywebview = (WebView) findViewById(R.id.WebViewId);
-        mywebview.loadUrl("https://www.google.com/");
+        mywebview.loadUrl("https://covid19-tracker-arnob.netlify.app//");
         mywebview.setWebViewClient(new WebViewClient());
 
         WebSettings x =mywebview.getSettings();
