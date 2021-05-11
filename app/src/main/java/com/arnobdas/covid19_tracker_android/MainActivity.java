@@ -17,9 +17,19 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mywebview = (WebView) findViewById(R.id.WebViewId);
-        mywebview.loadUrl("https://cutt.ly/gbSzGqG");
+        mywebview.loadUrl("https://www.google.com/");
 
         mywebview.setWebViewClient(new WebViewClient());
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (mywebview.canGoBack()){
+            mywebview.goBack();
+        }
+        else {
+            finish();
+        }
     }
 }
