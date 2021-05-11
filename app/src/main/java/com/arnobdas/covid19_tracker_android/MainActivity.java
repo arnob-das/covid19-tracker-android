@@ -20,11 +20,11 @@ public class MainActivity extends AppCompatActivity {
         mywebview.loadUrl("https://covid19-tracker-arnob.netlify.app//");
         mywebview.setWebViewClient(new WebViewClient());
 
-        WebSettings x =mywebview.getSettings();
-        x.setJavaScriptEnabled(true);
-        x.setBuiltInZoomControls(false);
-        x.setCacheMode(WebSettings.LOAD_NO_CACHE);
-        x.setDomStorageEnabled(true);
+        WebSettings myWebviewSettings =mywebview.getSettings();
+        myWebviewSettings.setJavaScriptEnabled(true);
+        myWebviewSettings.setBuiltInZoomControls(false);
+        myWebviewSettings.setCacheMode(WebSettings.LOAD_NO_CACHE);
+        myWebviewSettings.setDomStorageEnabled(true);
 
     }
 
